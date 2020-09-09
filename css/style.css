@@ -1,0 +1,164 @@
+header, main, .recente, footer {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 68px auto 68px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  grid-column: 1/13;
+  grid-row: 1/2;
+  background: #555454;
+}
+
+header a {
+  color: #ddd;
+}
+
+header nav a {
+  margin: 0 20px;
+}
+
+main {
+  grid-column: 2/12;
+  grid-row: 2/3;
+}
+
+.sobre {
+  display: flex;
+  width: 100%;
+}
+
+.sobre .sobre-description, .sobre p {
+  width: 50%;
+}
+
+.recentes {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+
+.titulo {
+  width: 100%;
+}
+
+.titulo h3 {
+  text-decoration: underline;
+  margin: 8px;
+}
+
+.recente {
+  border: solid 1px #adacac;
+  border-radius: 4px;
+  margin: 8px 0;
+  width: 350px;
+}
+
+.recente .local {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.recente .local .data {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.recente .local .data p {
+  font-size: 12px;
+  margin: 4px 0;
+}
+
+.recente .categoria {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.recente .categoria p,
+.recente .categoria a {
+  margin: 8px 0;
+}
+
+.recente .categoria,
+.recente .local,
+.recente .description {
+  padding: 0 16px;
+}
+
+.recente .description {
+  text-align: justify;
+  font-size: 12px;
+}
+
+.recente .description p {
+  margin: 8px 0;
+}
+
+footer {
+  height: 80px;
+  grid-column: 1/13;
+  grid-row: 3/4;
+  border-top: #555454 2px solid;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+input {
+  text-align: center;
+  outline: none;
+  border: none;
+  padding: 0.3rem;
+}
+
+select {
+  text-align: center;
+  border: none;
+  padding: 0.3rem;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
