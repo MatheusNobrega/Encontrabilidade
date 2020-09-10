@@ -1,4 +1,4 @@
-header, main, .recente, footer, footer .logo,
+header, main, .recente, .recente .local .local-descricao, footer, footer .logo,
 footer .contato {
   align-items: center;
   display: flex;
@@ -112,6 +112,14 @@ main {
   color: #ddd;
 }
 
+.recente .local img {
+  width: 100%;
+}
+
+.recente .local .local-descricao i {
+  margin-right: 8px;
+}
+
 .recente .local .data {
   display: flex;
   flex-wrap: wrap;
@@ -182,6 +190,15 @@ footer .redes-sociais {
 
 footer .redes-sociais a {
   color: #15a35a;
+}
+
+footer .redes-sociais .social {
+  width: 100px;
+  margin: 8px 0;
+}
+
+footer .redes-sociais .social i {
+  margin-right: 8px;
 }
 
 a {

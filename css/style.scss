@@ -115,7 +115,15 @@ main {
     @include flex(center, row, space-between);
     background: #555454;
     color: #ddd;
-
+    img {
+      width: 100%;
+    }
+    .local-descricao {
+      @extend %flexPadrao;
+      i {
+        margin-right: 8px;
+      }
+    }
     .data {
       @include flex(flex-end, column, center);
 
@@ -173,6 +181,13 @@ footer {
     @include flex(center, column, space-between);
     a {
       color: #15a35a;
+    }
+    .social{
+    width: 100px;
+      margin: 8px 0;
+    i{
+      margin-right: 8px;
+    }
     }
   }
 }
