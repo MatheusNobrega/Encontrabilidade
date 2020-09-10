@@ -17,43 +17,67 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
-  <title>Document</title>
+  <title>Player</title>
 </head>
 
 <body>
   <header>
-    <a href="#">Player</a>
+    <a href="#">
+      <h1>Player</h1>
+    </a>
     <nav>
-      <a href="#">Sobre</a>
-      <a href="#">Contato</a>
-      <a href="#">Cadastrar / Login</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#recentes">Recentes</a>
+      <a href="#contato">Contato</a>
     </nav>
   </header>
   <main>
-    <div class="sobre">
+    <div id="sobre" class="sobre">
       <div class="sobre-description">
+        <h1>Player</h1>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui labore placeat neque quod molestiae eos veniam
           suscipit delectus possimus sed illum, dolores tempore fugit nisi ratione praesentium doloremque minima
           impedit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non nemo quia officiis. Ducimus voluptate
           consectetur ut animi voluptatem debitis deserunt nisi eveniet, consequuntur laborum facere illo ipsa placeat
           fugit magni!</p>
       </div>
-      <img src="https://via.placeholder.com/200x350" alt="">
+      <div class="img-sobre">
+        <img src="img/sobre.jpg" alt="">
+      </div>
 
     </div>
-    <div class="recentes">
+    <div id="recentes" class="recentes">
       <div class="titulo">
         <h3>Ultimos locais cadastrados</h3>
       </div>
       <div class="recente">
         <div class="local">
-          <p>Local</p>
+          <p>Quadra - Babi Barioni</p>
           <div class="data">
-            <p>Data</p>
-            <p>Horario</p>
+            <p>26/09/2020</p>
+            <p>16:00</p>
           </div>
         </div>
-        <a href=""><img src="https://via.placeholder.com/350x200" alt=""></a>
+        <a href=""><img src="img/recentes/futsal.jpg" alt=""></a>
+        <div class="categoria">
+          <p>Categoria: </p>
+          <a href="#">Futsal</a>
+        </div>
+        <div class="description">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet tempore provident molestiae. Accusamus
+            fugit sunt ducimus eum sequi sed iste, facilis soluta fuga doloremque voluptatibus. Incidunt laboriosam
+            necessitatibus perspiciatis illum!</p>
+        </div>
+      </div>
+      <div class="recente">
+        <div class="local">
+          <p>Campo - Babi Barioni</p>
+          <div class="data">
+            <p>27/09/2020</p>
+            <p>17:00</p>
+          </div>
+        </div>
+        <img src="img/recentes/futebol.jpg" alt="">
         <div class="categoria">
           <p>Categoria: </p>
           <a href="#">Futebol de campo</a>
@@ -66,13 +90,51 @@
       </div>
       <div class="recente">
         <div class="local">
-          <p>Local</p>
+          <p>Quadra - Babi Barioni</p>
           <div class="data">
-            <p>Data</p>
-            <p>Horario</p>
+            <p>26/09/2020</p>
+            <p>18:00</p>
           </div>
         </div>
-        <img src="https://via.placeholder.com/350x200" alt="">
+        <img src="img/recentes/basquete.jpg" alt="">
+        <div class="categoria">
+          <p>Categoria: </p>
+          <a href="#">Basquete</a>
+        </div>
+        <div class="description">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet tempore provident molestiae. Accusamus
+            fugit sunt ducimus eum sequi sed iste, facilis soluta fuga doloremque voluptatibus. Incidunt laboriosam
+            necessitatibus perspiciatis illum!</p>
+        </div>
+      </div>
+      <div class="recente">
+        <div class="local">
+          <p>Ginasio Esporte</p>
+          <div class="data">
+            <p>26/09/2020</p>
+            <p>16:00</p>
+          </div>
+        </div>
+        <a href=""><img src="img/recentes/futsal.jpg" alt=""></a>
+        <div class="categoria">
+          <p>Categoria: </p>
+          <a href="#">Futsal</a>
+        </div>
+        <div class="description">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet tempore provident molestiae. Accusamus
+            fugit sunt ducimus eum sequi sed iste, facilis soluta fuga doloremque voluptatibus. Incidunt laboriosam
+            necessitatibus perspiciatis illum!</p>
+        </div>
+      </div>
+      <div class="recente">
+        <div class="local">
+          <p>Campão</p>
+          <div class="data">
+            <p>27/09/2020</p>
+            <p>17:00</p>
+          </div>
+        </div>
+        <img src="img/recentes/futebol.jpg" alt="">
         <div class="categoria">
           <p>Categoria: </p>
           <a href="#">Futebol de campo</a>
@@ -85,16 +147,16 @@
       </div>
       <div class="recente">
         <div class="local">
-          <p>Local</p>
+          <p></p>
           <div class="data">
-            <p>Data</p>
-            <p>Horario</p>
+            <p>26/09/2020</p>
+            <p>18:00</p>
           </div>
         </div>
-        <img src="https://via.placeholder.com/350x200" alt="">
+        <img src="img/recentes/basquete.jpg" alt="">
         <div class="categoria">
           <p>Categoria: </p>
-          <a href="#">Futebol de campo</a>
+          <a href="#">Basquete</a>
         </div>
         <div class="description">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet tempore provident molestiae. Accusamus
@@ -105,7 +167,22 @@
     </div>
   </main>
   <footer>
-    todos os direitos reservados
+    <div class="logo">
+      <a href="">
+        <h2>Player</h2>
+      </a>
+    </div>
+    <div id="contato" class="contato">
+      <div class="outros">
+        <p>Telefone: 16 999999999</p>
+        <p>Email: contato@player.com</p>
+      </div>
+      <div class="redes-sociais">
+        <a href="">Facebook</a>
+        <a href="">Instagram</a>
+        <a href="">YouTube</a>
+      </div>
+    </div>
   </footer>
 </body>
 
