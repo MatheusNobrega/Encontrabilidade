@@ -1,0 +1,24 @@
+@import 'mvp.scss';
+
+body {
+    @include grid(grid, repeat(12, 1fr), 4.25rem auto auto);
+}
+
+
+header {
+    grid-column: 1/13;
+    grid-row: 1/2;
+}
+
+main {
+    grid-column: 2/12;
+    grid-row: 2/3;
+    @media (max-width: 1220px) {
+        grid-column: 2/12;
+    }
+}
+
+footer {
+    grid-column: 1/13;
+    grid-row: 3/4;
+}

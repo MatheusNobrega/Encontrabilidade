@@ -1,4 +1,13 @@
-header, main, .recente, .recente .local .local-descricao, footer, footer .logo,
+header, main, .sobre, .recente, .recente .local .local-descricao, footer, footer .logo,
+footer .contato {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+header, main, .sobre, .recente, .recente .local .local-descricao, footer, footer .logo,
 footer .contato {
   align-items: center;
   display: flex;
@@ -8,16 +17,45 @@ footer .contato {
 }
 
 body {
-  height: 100vh;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 4.25rem auto auto;
-  font-family: "Lato", sans-serif;
 }
 
 header {
   grid-column: 1/13;
   grid-row: 1/2;
+}
+
+main {
+  grid-column: 2/12;
+  grid-row: 2/3;
+}
+
+@media (max-width: 1220px) {
+  main {
+    grid-column: 2/12;
+  }
+}
+
+footer {
+  grid-column: 1/13;
+  grid-row: 3/4;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 4.25rem auto auto;
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f3eeee;
+  color: #0c0c11;
+}
+
+header {
   background: #fcffff;
   border-bottom: 0.125rem solid #15a35a;
 }
@@ -34,25 +72,15 @@ header h1 {
 header nav a {
   margin: 0 1.25rem;
   font-weight: bolder;
-  color: black;
+  color: #0c0c11;
 }
 
-main {
-  grid-column: 2/12;
-  grid-row: 2/3;
-}
-
-main .sobre,
-main .recentes {
+.sobre,
+.recentes {
   margin: 16px 0;
 }
 
 .sobre {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
   width: 100%;
   height: 18.75rem;
   background: #fcffff;
@@ -93,6 +121,21 @@ main .recentes {
   width: 50%;
 }
 
+@media (max-width: 1024px) {
+  .sobre {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+  }
+  .sobre .sobre-description,
+  .sobre .img-sobre {
+    width: 100%;
+  }
+}
+
 .recentes {
   width: 100%;
   display: flex;
@@ -122,12 +165,42 @@ main .recentes {
   margin: 0.5rem;
 }
 
+@media (max-width: 450px) {
+  .recentes .titulo h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .recentes .titulo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  .recentes .titulo h2 {
+    font-size: 25px;
+  }
+}
+
 .recente {
   border: solid 0.0625rem #e0dede;
   border-radius: 0.25rem;
   margin: 0.5rem 0;
   width: 25rem;
   background: #fcffff;
+}
+
+@media (max-width: 960px) {
+  .recente {
+    width: 100%;
+  }
+}
+
+.recente a,
+.recente img {
+  width: 100%;
 }
 
 .recente .local {
@@ -142,8 +215,14 @@ main .recentes {
   font-weight: bold;
 }
 
-.recente .local img {
-  width: 100%;
+@media (max-width: 500px) {
+  .recente .local {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 .recente .local .local-descricao img {
@@ -158,6 +237,18 @@ main .recentes {
   justify-content: center;
   align-items: flex-end;
   flex-direction: column;
+}
+
+@media (max-width: 500px) {
+  .recente .local .data {
+    padding-bottom: 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
 }
 
 .recente .local .data p {
@@ -203,17 +294,16 @@ main .recentes {
 }
 
 .recente .categoria .icone-tipo {
+  width: 100px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
   flex-direction: row;
+  align-items: center;
 }
 
 .recente .categoria .icone-tipo img {
   margin-right: 0.5rem;
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .recente .categoria a {
@@ -223,7 +313,7 @@ main .recentes {
 .recente .categoria,
 .recente .local,
 .recente .description {
-  padding: 0 16px;
+  padding: 0 1rem;
 }
 
 .recente .description {
@@ -235,12 +325,16 @@ main .recentes {
   margin: 0.5rem 0;
 }
 
+@media (max-width: 1024px) {
+  .recente {
+    width: 100%;
+  }
+}
+
 footer {
   width: 100%;
   height: 500px;
   height: auto;
-  grid-column: 1/13;
-  grid-row: 3/4;
   background: #555454;
 }
 
@@ -257,8 +351,39 @@ footer .contato {
   width: 50%;
 }
 
+@media (max-width: 1024px) {
+  footer .logo,
+  footer .contato {
+    width: 100%;
+  }
+}
+
 footer .contato .outros p {
   color: #e0dede;
+}
+
+footer .outros,
+footer .redes-sociais {
+  width: 50%;
+}
+
+@media (max-width: 500px) {
+  footer .outros .contato .outros,
+  footer .outros .contato .redes-sociais,
+  footer .redes-sociais .contato .outros,
+  footer .redes-sociais .contato .redes-sociais {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  footer .outros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 footer .redes-sociais {
@@ -281,88 +406,16 @@ footer .redes-sociais .social {
 
 footer .redes-sociais .social img {
   margin-right: 0.5rem;
-  width: 20px;
-  height: 20px;
-}
-
-a {
-  text-decoration: none;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background: #f3eeee;
-}
-
-button {
-  border: none;
-  text-align: center;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-}
-
-input {
-  text-align: center;
-  outline: none;
-  border: none;
-  padding: 0.3rem;
-}
-
-select {
-  text-align: center;
-  border: none;
-  padding: 0.3rem;
-}
-
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 @media (max-width: 1024px) {
-  .sobre {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    height: auto;
-  }
-  .sobre .sobre-description,
-  .sobre .img-sobre {
-    width: 100%;
-  }
-  .recentes .titulo {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-  }
   footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-  }
-  .outros {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  .redes-sociais {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
   }
 }
