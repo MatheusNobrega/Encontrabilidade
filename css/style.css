@@ -11,18 +11,20 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 68px auto 68px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  grid-template-rows: 4.25rem auto auto;
+  font-family: "Lato", sans-serif;
 }
 
 header {
   grid-column: 1/13;
   grid-row: 1/2;
-  background: #555454;
+  background: #fcffff;
+  border-bottom: 0.125rem solid #15a35a;
 }
 
-header a {
-  color: #ddd;
+header > a {
+  color: #15a35a;
+  font-weight: bolder;
 }
 
 header h1 {
@@ -30,12 +32,19 @@ header h1 {
 }
 
 header nav a {
-  margin: 0 20px;
+  margin: 0 1.25rem;
+  font-weight: bolder;
+  color: black;
 }
 
 main {
   grid-column: 2/12;
   grid-row: 2/3;
+}
+
+main .sobre,
+main .recentes {
+  margin: 16px 0;
 }
 
 .sobre {
@@ -45,11 +54,10 @@ main {
   align-items: center;
   flex-direction: row;
   width: 100%;
-}
-
-.sobre .sobre-description,
-.sobre .img-sobre {
-  width: 50%;
+  height: 18.75rem;
+  background: #fcffff;
+  border: solid 0.0625rem #e0dede;
+  border-radius: 0.25rem;
 }
 
 .sobre .sobre-description {
@@ -68,37 +76,58 @@ main {
 
 .sobre .img-sobre {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
 
 .sobre .img-sobre img {
   width: 100%;
+  height: 18.75rem;
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.sobre .sobre-description,
+.sobre .img-sobre {
+  width: 50%;
 }
 
 .recentes {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
 }
 
 .recentes .titulo {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
 }
 
-.recentes .titulo h3 {
+.recentes .titulo img {
+  margin-right: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.recentes .titulo h2 {
   text-decoration: underline;
-  margin: 8px;
+  margin: 0.5rem;
 }
 
 .recente {
-  border: solid 1px #adacac;
-  border-radius: 4px;
-  margin: 8px 0;
-  width: 400px;
+  border: solid 0.0625rem #e0dede;
+  border-radius: 0.25rem;
+  margin: 0.5rem 0;
+  width: 25rem;
+  background: #fcffff;
 }
 
 .recente .local {
@@ -110,14 +139,17 @@ main {
   flex-direction: row;
   background: #555454;
   color: #ddd;
+  font-weight: bold;
 }
 
 .recente .local img {
   width: 100%;
 }
 
-.recente .local .local-descricao i {
-  margin-right: 8px;
+.recente .local .local-descricao img {
+  margin-right: 0.5rem;
+  width: 1rem;
+  height: 1rem;
 }
 
 .recente .local .data {
@@ -129,8 +161,30 @@ main {
 }
 
 .recente .local .data p {
-  font-size: 12px;
+  font-size: 0.75rem;
   margin: 4px 0;
+}
+
+.recente .local .data .data-data,
+.recente .local .data .data-horario {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: row;
+  margin: 0.125rem 0;
+}
+
+.recente .local .data .data-data p,
+.recente .local .data .data-horario p {
+  margin: 0;
+}
+
+.recente .local .data .data-data img,
+.recente .local .data .data-horario img {
+  margin-right: 0.5rem;
+  width: 1rem;
+  height: 1rem;
 }
 
 .recente .categoria {
@@ -144,12 +198,26 @@ main {
 
 .recente .categoria p,
 .recente .categoria a {
-  margin: 8px 0;
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+
+.recente .categoria .icone-tipo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.recente .categoria .icone-tipo img {
+  margin-right: 0.5rem;
+  width: 20px;
+  height: 20px;
 }
 
 .recente .categoria a {
   color: #15a35a;
-  font-weight: bold;
 }
 
 .recente .categoria,
@@ -160,24 +228,37 @@ main {
 
 .recente .description {
   text-align: justify;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .recente .description p {
-  margin: 8px 0;
+  margin: 0.5rem 0;
 }
 
 footer {
   width: 100%;
-  height: 80px;
+  height: 500px;
+  height: auto;
   grid-column: 1/13;
   grid-row: 3/4;
-  border-top: #555454 2px solid;
+  background: #555454;
+}
+
+footer a {
+  color: #e0dede;
+}
+
+footer .logo a {
+  color: #15a35a;
 }
 
 footer .logo,
 footer .contato {
   width: 50%;
+}
+
+footer .contato .outros p {
+  color: #e0dede;
 }
 
 footer .redes-sociais {
@@ -188,17 +269,20 @@ footer .redes-sociais {
   flex-direction: column;
 }
 
-footer .redes-sociais a {
-  color: #15a35a;
-}
-
 footer .redes-sociais .social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
   width: 100px;
-  margin: 8px 0;
+  margin: 0.5rem 0;
 }
 
-footer .redes-sociais .social i {
-  margin-right: 8px;
+footer .redes-sociais .social img {
+  margin-right: 0.5rem;
+  width: 20px;
+  height: 20px;
 }
 
 a {
@@ -208,6 +292,7 @@ a {
 body {
   margin: 0;
   padding: 0;
+  background: #f3eeee;
 }
 
 button {
@@ -237,4 +322,47 @@ input[type="number"] {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+}
+
+@media (max-width: 1024px) {
+  .sobre {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+  }
+  .sobre .sobre-description,
+  .sobre .img-sobre {
+    width: 100%;
+  }
+  .recentes .titulo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  .outros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .redes-sociais {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
 }
