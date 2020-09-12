@@ -1,5 +1,5 @@
 header, main, .sobre, .recente, .recente .local .local-descricao, footer, footer .logo,
-footer .contato {
+footer .redes-sociais {
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -8,7 +8,7 @@ footer .contato {
 }
 
 header, main, .sobre, .recente, .recente .local .local-descricao, footer, footer .logo,
-footer .contato {
+footer .redes-sociais {
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -30,12 +30,6 @@ header {
 main {
   grid-column: 2/12;
   grid-row: 2/3;
-}
-
-@media (max-width: 1220px) {
-  main {
-    grid-column: 2/12;
-  }
 }
 
 footer {
@@ -333,51 +327,28 @@ header nav a {
 
 footer {
   width: 100%;
-  height: 500px;
-  height: auto;
   background: #555454;
 }
 
-footer a {
-  color: #e0dede;
-}
-
-footer .logo a {
+footer a,
+footer h1 {
   color: #15a35a;
 }
 
 footer .logo,
-footer .contato {
+footer .redes-sociais {
   width: 50%;
 }
 
 @media (max-width: 1024px) {
   footer .logo,
-  footer .contato {
+  footer .redes-sociais {
     width: 100%;
   }
-}
-
-footer .contato .outros p {
-  color: #e0dede;
-}
-
-footer .outros,
-footer .redes-sociais {
-  width: 50%;
 }
 
 @media (max-width: 500px) {
-  footer .outros .contato .outros,
-  footer .outros .contato .redes-sociais,
-  footer .redes-sociais .contato .outros,
-  footer .redes-sociais .contato .redes-sociais {
-    width: 100%;
-  }
-}
-
-@media (max-width: 1024px) {
-  footer .outros {
+  footer .redes-sociais {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -386,36 +357,36 @@ footer .redes-sociais {
   }
 }
 
-footer .redes-sociais {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
+footer .redes-sociais img {
+  width: 1rem;
+  height: 1rem;
 }
 
 footer .redes-sociais .social {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  flex-direction: row;
-  width: 100px;
-  margin: 0.5rem 0;
+  flex-direction: column;
+  padding: 8px 0;
 }
 
-footer .redes-sociais .social img {
-  margin-right: 0.5rem;
-  width: 1.25rem;
-  height: 1.25rem;
+footer .redes-sociais .social img,
+footer .redes-sociais .social a {
+  padding: 8px 0;
 }
 
-@media (max-width: 1024px) {
-  footer {
+@media (max-width: 500px) {
+  footer .redes-sociais .social {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
+  }
+  footer .redes-sociais .social img,
+  footer .redes-sociais .social a {
+    width: 50%;
   }
 }

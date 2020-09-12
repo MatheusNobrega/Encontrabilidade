@@ -1,5 +1,5 @@
-@import 'mvp.scss';
-@import 'grid.scss';
+@import "mvp.scss";
+@import "grid.scss";
 
 body {
   height: 100vh;
@@ -15,7 +15,7 @@ header {
   border-bottom: 0.125rem solid #15a35a;
   @extend %flexPadrao;
 
-  >a {
+  > a {
     color: #15a35a;
     font-weight: bolder;
   }
@@ -28,7 +28,6 @@ header {
     margin: 0 1.25rem;
     font-weight: bolder;
     color: #0c0c11;
-
   }
 }
 
@@ -145,7 +144,6 @@ main {
       @include flex(center, column, space-between);
     }
 
-
     .local-descricao {
       @extend %flexPadrao;
 
@@ -199,7 +197,7 @@ main {
     .icone-tipo {
       width: 100px;
       display: flex;
-      flex-direction:row;
+      flex-direction: row;
       align-items: center;
 
       img {
@@ -234,81 +232,45 @@ main {
 }
 
 footer {
+  a,
+  h1 {
+    color: #15a35a;
+  }
   width: 100%;
-  height: 500px;
-  height: auto;
   @extend %flexPadrao;
   background: #555454;
-
-  a {
-    color: #e0dede;
-  }
-
-  .logo {
-    a {
-      color: #15a35a;
-    }
-  }
-
   .logo,
-  .contato {
+  .redes-sociais {
     @extend %flexPadrao;
     width: 50%;
-
     @media (max-width: 1024px) {
       width: 100%;
     }
   }
 
-  .contato {
-    .outros {
-      p {
-        color: #e0dede;
-      }
-    }
-  }
-
-  .outros,
   .redes-sociais {
-    width: 50%;
-
+    @extend %flexPadrao;
     @media (max-width: 500px) {
-      .contato {
-
-        .outros,
-        .redes-sociais {
-          width: 100%;
+      @include flex(center, column, center);
+    }
+    img {
+      @include tamanho(1rem, 1rem);
+    }
+    .social {
+      @include flex(center, column, center);
+      padding: 8px 0;
+      img,
+      a {
+        padding: 8px 0;
+      }
+      @media (max-width: 500px) {
+        width: 100%;
+        @include flex(center, row, center);
+        img,
+        a {
+          width: 50%;
         }
       }
     }
-  }
-
-  @media (max-width: 1024px) {
-    .outros {
-      @include flex(center, column, center);
-    }
-  }
-
-  .redes-sociais {
-    @include flex(center, column, space-between);
-
-    @media (max-width: 350px) {
-      // @include flex(center, row, space-between);
-    }
-
-    .social {
-      @include flex(center, row, space-between);
-      width: 100px;
-      margin: 0.5rem 0;
-
-      img {
-        margin-right: 0.5rem;
-        @include tamanho(1.25rem, 1.25rem);
-      }
-    }
-  }
-
-  @media (max-width: 1024px) {
-    @include flex(center, column, space-around);
   }
 }
