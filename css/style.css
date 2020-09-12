@@ -94,6 +94,7 @@ header nav a {
 .sobre .sobre-description p {
   width: 90%;
   text-align: justify;
+  margin: 8px 0;
 }
 
 .sobre .img-sobre {
@@ -174,7 +175,20 @@ header nav a {
     flex-direction: row;
   }
   .recentes .titulo h2 {
-    font-size: 25px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 500px) {
+  .recentes .titulo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  .recentes .titulo h2 {
+    font-size: 16px;
   }
 }
 
@@ -371,9 +385,8 @@ footer .redes-sociais .social {
   padding: 8px 0;
 }
 
-footer .redes-sociais .social img,
-footer .redes-sociais .social a {
-  padding: 8px 0;
+footer .redes-sociais .social img {
+  margin-bottom: 18px;
 }
 
 @media (max-width: 500px) {
@@ -385,8 +398,8 @@ footer .redes-sociais .social a {
     align-items: center;
     flex-direction: row;
   }
-  footer .redes-sociais .social img,
-  footer .redes-sociais .social a {
-    width: 50%;
+  footer .redes-sociais .social img {
+    margin-bottom: 0px;
+    margin-right: 18px;
   }
 }
