@@ -45,7 +45,7 @@ body {
   font-family: "Lato", sans-serif;
   margin: 0;
   padding: 0;
-  background: #f3eeee;
+  background: #faf7f7;
   color: #0c0c11;
 }
 
@@ -63,10 +63,55 @@ header h1 {
   margin: 0;
 }
 
+header #toggle {
+  display: flex;
+}
+
 header nav a {
   margin: 0 1.25rem;
   font-weight: bolder;
   color: #0c0c11;
+  padding: 0 8px;
+}
+
+header nav a:hover {
+  color: #28d17a;
+}
+
+header img {
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 700px) {
+  header {
+    height: auto;
+    position: absolute;
+    width: 100%;
+    padding: 8px 0;
+  }
+  header img {
+    display: flex;
+  }
+  header #toggle {
+    display: none;
+  }
+  header nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  header nav a {
+    padding: 8px 0;
+    display: flex;
+    justify-content: center;
+    background: #fcffff;
+  }
 }
 
 .sobre,
@@ -91,10 +136,28 @@ header nav a {
 }
 
 .sobre .sobre-description h1,
+.sobre .sobre-description .cadastrar,
 .sobre .sobre-description p {
   width: 90%;
   text-align: justify;
   margin: 8px 0;
+}
+
+.sobre .sobre-description button {
+  background: #15a35a;
+  color: #fcffff;
+  margin: 8px;
+  cursor: pointer;
+}
+
+.sobre .sobre-description button:hover {
+  background: #28d17a;
+}
+
+.sobre .sobre-description .cadastrar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .sobre .img-sobre {
@@ -125,9 +188,11 @@ header nav a {
     flex-direction: column;
     height: auto;
   }
-  .sobre .sobre-description,
-  .sobre .img-sobre {
+  .sobre .sobre-description {
     width: 100%;
+  }
+  .sobre .img-sobre {
+    display: none;
   }
 }
 

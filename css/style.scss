@@ -6,16 +6,17 @@ body {
   @include grid(grid, repeat(12, 1fr), 4.25rem auto auto);
   font-family: "Lato", sans-serif;
   @include marginPadding(0, 0);
-  background: #f3eeee;
+  background: #faf7f7;
   color: #0c0c11;
 }
 
 header {
   background: #fcffff;
   border-bottom: 0.125rem solid #15a35a;
+  // padding: 4px 8px;
   @extend %flexPadrao;
-
-  > a {
+  
+  >a {
     color: #15a35a;
     font-weight: bolder;
   }
@@ -24,10 +25,49 @@ header {
     margin: 0;
   }
 
+  #toggle{
+    display: flex;
+  }
   nav a {
     margin: 0 1.25rem;
     font-weight: bolder;
     color: #0c0c11;
+    padding: 0 8px;
+    &:hover{
+      color: #28d17a;  
+    }
+    
+  }
+  img{
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    display: none;
+  }
+
+  @media (max-width: 700px) {
+    height: auto;
+    position: absolute;
+    width: 100%;
+    padding: 8px 0;
+
+
+    img{
+      display: flex;
+    }
+    #toggle{
+      display: none;
+    }
+    nav{
+      width: 100%;
+      @include flex(center, column, center);
+      a{
+        padding: 8px 0 ;
+        display: flex;
+        justify-content: center;
+        background: #fcffff;
+      }
+    }
   }
 }
 
@@ -49,13 +89,29 @@ main {
 
   .sobre-description {
     @include flex(center, column, space-evenly);
-
     h1,
+    .cadastrar,
     p {
       width: 90%;
       text-align: justify;
       margin: 8px 0;
     }
+    button{
+      background: #15a35a;
+      color: #fcffff;
+      margin: 8px;
+      cursor: pointer;
+      &:hover{
+        background: #28d17a;  
+      }
+
+    }
+    .cadastrar{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    
   }
 
   .img-sobre {
@@ -76,9 +132,12 @@ main {
     @include flex(center, column, space-between);
     height: auto;
 
-    .sobre-description,
-    .img-sobre {
+    .sobre-description
+     {
       width: 100%;
+    }
+    .img-sobre{
+      display: none;
     }
   }
 }
